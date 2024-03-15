@@ -1,2 +1,2 @@
 # jsbridge
-jsbridge for react native
+jsbridge for react native webview

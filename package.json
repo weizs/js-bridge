@@ -1,0 +1,35 @@
+{
+  "name": "jsbridge",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc && vite build && vite build --config vite.config.web.mts && vite build --config vite.config.text.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/native.js",
+  "module": "./dist/native.mjs",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "require": "./dist/native.js",
+      "import": "./dist/native.mjs"
+    },
+    "./web": {
+      "types": "./index.web.ts",
+      "require": "./dist/web.js",
+      "import": "./dist/web.mjs"
+    },
+    "./text": {
+      "types": "./index.text.ts",
+      "require": "./dist/text.js",
+      "import": "./dist/text.mjs"
+    }
+  }
+}
